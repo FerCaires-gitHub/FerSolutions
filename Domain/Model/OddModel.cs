@@ -9,6 +9,7 @@ namespace Domain.Model
     
     public class OddModel
     {
+        public int Id { get; set; }
         public string Event { get; set; }
 
         public string Name { get; set; }

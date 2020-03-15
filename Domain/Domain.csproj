@@ -41,15 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Dictionary\BetDictionaries.cs" />
     <Compile Include="Model\BetModel.cs" />
+    <Compile Include="Model\EventModel.cs" />
     <Compile Include="Model\OddModel.cs" />
     <Compile Include="Model\ParserModel.cs" />
+    <Compile Include="Parser\IBet365Parser.cs" />
     <Compile Include="Parser\IBetParser.cs" />
+    <Compile Include="Parser\ISportingBetParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IBetRepository.cs" />
     <Compile Include="Service\IBetService.cs" />
+    <Compile Include="Service\IParserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mapping\" />

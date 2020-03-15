@@ -48,9 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj">
       <Project>{587C6B3A-4E2B-43EF-AD86-CBB3BD7C6E4F}</Project>
       <Name>Application</Name>
@@ -59,6 +56,9 @@
       <Project>{3E6992CA-A2F9-4143-B23D-CCDEABF867A3}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,13 @@ namespace Domain.Parser
 {
     public interface IBetParser
     {
-        IDictionary<string,IEnumerable<OddModel>> GetOdds<T>(T Model);
+        IDictionary<string,IEnumerable<OddModel>> GetMatchOdds();
+        IEnumerable<OddModel> GetDoubleChance();
+
+        IEnumerable<EventModel> GetEvents();
+
+        IEnumerable<OddModel> GetOdds();
+            
+        
     }
 }

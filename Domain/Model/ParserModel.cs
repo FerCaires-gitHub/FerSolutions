@@ -10,7 +10,7 @@ namespace Domain.Model
     {
         public string Site { get; set; }
 
-        public Dictionary<string,string> HtmlCodes { get; set; }
+        public IDictionary<string,string> HtmlCodes { get; set; }
 
     }
 }

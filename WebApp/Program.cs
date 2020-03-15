@@ -1,4 +1,5 @@
-﻿using Application.Service;
+﻿using Application.Parser;
+using Application.Service;
 using CrossCutting.Ioc;
 using Domain.Dictionary;
 using System;
@@ -11,12 +12,19 @@ using System.Threading.Tasks;
 
 namespace WebApp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             var container = ModuleBase.Config();
             var service = container.GetInstance<BetService>();
+            var bet365Parser = container.GetInstance<Bet365Parser>();
+            var sportingbetParser = container.GetInstance<SportingBetParser>();
+
+            bet365Parser.GetOdds();
+
+            
+
 
             //service.GetAll();
             Console.WriteLine("Inicio das tasks paralelas");

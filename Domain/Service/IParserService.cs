@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Service
 {
-    public interface IBetService : IDisposable
+    public interface IParserService<T> where T: class, IDisposable
     {
-        IEnumerable<BetModel> GetBet(double OddHome, double OddAway);
-
-        void GetAll();
-
-        
+        IEnumerable<string> GetEvent(T instance);
+        IEnumerable<EventModel> GetEventDetails(T instance);
     }
 }

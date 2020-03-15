@@ -1,4 +1,6 @@
-﻿using Application.Service;
+﻿using Application.Parser;
+using Application.Service;
+using Domain.Parser;
 using Domain.Service;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
@@ -17,6 +19,8 @@ namespace CrossCutting.Ioc
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
             container.Register<IBetService, BetService>(Lifestyle.Scoped);
+            container.Register<IBet365Parser, Bet365Parser>(Lifestyle.Scoped);
+            container.Register<ISportingBetParser, SportingBetParser>(Lifestyle.Scoped);
             container.Verify();
             return container;
         }

@@ -19,6 +19,15 @@ namespace Domain.Dictionary
             {"2","1X"}
         };
 
+        public static Dictionary<string, string> BetHouses = new Dictionary<string, string>()
+        {
+            { "Bet365",string.Empty},
+            { "1XBet",string.Empty},
+            { "SportingBet", string.Empty},
+            { "SportBook", string.Empty}
+
+        };
+
 
     }
 }
