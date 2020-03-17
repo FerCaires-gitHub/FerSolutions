@@ -21,6 +21,7 @@ namespace CrossCutting.Ioc
             container.Register<IBetService, BetService>(Lifestyle.Scoped);
             container.Register<IBet365Parser, Bet365Parser>(Lifestyle.Scoped);
             container.Register<ISportingBetParser, SportingBetParser>(Lifestyle.Scoped);
+            container.Register<IOddsMonitorParser, OddsMonitorParser>(Lifestyle.Scoped);
             container.Verify();
             return container;
         }

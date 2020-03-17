@@ -48,6 +48,7 @@
     <Compile Include="Model\ParserModel.cs" />
     <Compile Include="Parser\IBet365Parser.cs" />
     <Compile Include="Parser\IBetParser.cs" />
+    <Compile Include="Parser\IOddsMonitorParser.cs" />
     <Compile Include="Parser\ISportingBetParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IBetRepository.cs" />

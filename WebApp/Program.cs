@@ -2,6 +2,7 @@
 using Application.Service;
 using CrossCutting.Ioc;
 using Domain.Dictionary;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,13 +15,19 @@ namespace WebApp
 {
     public class Program
     {
+        private static ILog _log = LogManager.GetLogger(typeof(Program));
         static void Main(string[] args)
         {
+            _log.Info($"Getting instances");
             var container = ModuleBase.Config();
             var service = container.GetInstance<BetService>();
             var bet365Parser = container.GetInstance<Bet365Parser>();
             var sportingbetParser = container.GetInstance<SportingBetParser>();
+            var oddsMonitor = container.GetInstance<OddsMonitorParser>();
 
+
+            oddsMonitor.GetEvents();
+            sportingbetParser.GetEvents();
             bet365Parser.GetOdds();
 
             

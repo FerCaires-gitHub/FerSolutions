@@ -13,26 +13,28 @@ using System.Threading.Tasks;
 
 namespace Application.Parser
 {
-    public class SportingBetParser : ISportingBetParser
+    public class OddsMonitorParser : IOddsMonitorParser
     {
-        public const string marketGroup = "option-panel ng-star-inserted";
-        private List<string> Urls = new List<string>() { "https://sports.sportingbet.com/pt-br/sports/eventos/galatasaray-besiktas-9775465?tab=score", "https://sports.sportingbet.com/pt-br/sports/eventos/atletico-acreano-galvez-ec-9846281" };
-        private List<HtmlDocument> htmlDocuments = new List<HtmlDocument>();
-        private int ThreadSleepTime = 3000;
+        public const string url = "https://oddspedia.com/football/";
         private ILog _log;
+        private int ThreadSleepTime = 15000;
+        private List<string> Urls = new List<string>() { "https://www.betmonitor.com/surebets/" };
 
-        public SportingBetParser()
+        public OddsMonitorParser()
         {
-            _log = LogManager.GetLogger(typeof(SportingBetParser));
+            _log = LogManager.GetLogger(typeof(OddsMonitorParser));
         }
-        public IDictionary<string, IEnumerable<OddModel>> GetMatchOdds()
+
+        public IDictionary<string, IEnumerable<OddModel>> GetMatchOdds() => throw new NotImplementedException();
+        public IEnumerable<OddModel> GetDoubleChance() => throw new NotImplementedException();
+
+        public IEnumerable<EventModel> GetEvents()
         {
-            return new Dictionary<string, IEnumerable<OddModel>>();
+            var response = GetHtmlDocuments(Urls);
+            return new List<EventModel>();
         }
-        public IEnumerable<OddModel> GetDoubleChance()
-        {
-            return new List<OddModel>();
-        }
+
+        public IEnumerable<OddModel> GetOdds() => throw new NotImplementedException();
 
         private IEnumerable<HtmlDocument> GetHtmlDocuments(IEnumerable<string> Urls)
         {
@@ -68,17 +70,5 @@ namespace Application.Parser
                 throw ex;
             }
         }
-
-        public IEnumerable<EventModel> GetEvents()
-        {
-            var response = GetHtmlDocuments(Urls);
-            return new List<EventModel>();    
-        }
-
-        public IEnumerable<OddModel> GetOdds()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

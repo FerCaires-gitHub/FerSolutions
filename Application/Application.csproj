@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Parser\Bet365Parser.cs" />
+    <Compile Include="Parser\OddsMonitorParser.cs" />
     <Compile Include="Parser\SportingBetParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\BetService.cs" />
